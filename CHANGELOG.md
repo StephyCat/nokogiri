@@ -48,6 +48,7 @@ Future releases of Nokogiri may deprecate `HTML` methods or otherwise change thi
 
 ### Improved
 
+* [CRuby] Handle abruptly-closed HTML comments as WHATWG recommends for browsers. (Thanks to HackerOne user [tehryanx](https://hackerone.com/tehryanx?type=user) for reporting this!)
 * [CRuby] Speed up (slightly) the compile time of packaged libraries `libiconv`, `libxml2`, and `libxslt` by using autoconf's `--disable-dependency-tracking` option. ("ruby" platform gem only.)
 
 
