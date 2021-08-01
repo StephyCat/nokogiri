@@ -58,6 +58,13 @@ module Nokogiri
         xpath(*(xpaths + [ns, handler, binds].compact))
       end
 
+      ##
+      # _search: accepts array of args
+      #
+      def _search(args, *extra)
+        search(*args, extra)
+      end
+
       alias :/ :search
 
       ###
@@ -157,6 +164,13 @@ module Nokogiri
         paths, handler, ns, binds = extract_params(args)
 
         xpath_internal self, paths, handler, ns, binds
+      end
+
+      ##
+      # _xpath: accepts array of args
+      #
+      def _xpath(args, *extra)
+        xpath(*args, extra)
       end
 
       ##
