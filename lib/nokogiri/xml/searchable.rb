@@ -216,7 +216,11 @@ module Nokogiri
           ctx.register_variable key.to_s, value
         end if binds
 
-        ctx.evaluate(path, handler)
+        begin
+          ctx.evaluate(path, handler)
+        rescue Nokogiri::XML::XPath::SyntaxError
+          []
+        end
       end
 
       def css_rules_to_xpath(rules, ns)
